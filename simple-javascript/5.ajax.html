@@ -23,11 +23,28 @@
 
         // 本来は HTML エスケープが必要
         const innerHTML = body.users
-          .map((user) => `<tr><td>${user.id}</td><td>${user.name}</td></tr>`)
+          .map(
+            (user) =>
+              `<tr>
+                <td>${escapeHtml(user.id)}</td>
+                <td>${escapeHtml(user.name)}</td>
+              </tr>`
+          )
           .reduce((l, r) => l + r)
 
         const usersTbody = document.getElementById('users-tbody')
         usersTbody.innerHTML = innerHTML
+      }
+
+      function escapeHtml(str) {
+        if (typeof str !== 'string') {
+          str = String(str)
+        }
+        return str
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/\'/g, '&apos;')
+          .replace(/\"/g, '&quot;')
       }
     </script>
   </body>
