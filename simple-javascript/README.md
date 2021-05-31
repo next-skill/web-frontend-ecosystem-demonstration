@@ -1,8 +1,6 @@
-# javascript-on-console
+# simple-javascript
 
-## デモンストレーション手順
-
-index.html を開き、開発者ツールのコンソールで以下のスクリプトを実行する
+## javascript-on-console
 
 ```javascript
 const textInput = document.getElementById('text-input')
