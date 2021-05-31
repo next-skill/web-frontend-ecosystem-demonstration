@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>demo</title>
+  </head>
+  <body>
+    <div id="app">
+      <label>title: </label>
+      <input type="text" name="text" v-model="text" />
+      <button type="submit" :disabled="!text">submit</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <script>
+      var app = new Vue({
+        el: '#app',
+        data: {
+          text: ''
+        }
+      })
+    </script>
+  </body>
+</html>
