@@ -4,18 +4,16 @@
     <title>demo</title>
   </head>
   <body>
-    <div id="app">
-      <button onclick="load()">load</button>
-      <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Name</th>
-          </tr>
-        </thead>
-        <tbody id="users-tbody"></tbody>
-      </table>
-    </div>
+    <button onclick="load()">load</button>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+        </tr>
+      </thead>
+      <tbody id="users-tbody"></tbody>
+    </table>
     <script>
       async function load() {
         const response = await fetch('./data.json')
