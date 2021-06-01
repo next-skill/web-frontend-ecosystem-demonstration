@@ -19,7 +19,6 @@
         const response = await fetch('./data.json')
         const body = await response.json()
 
-        // 本来は HTML エスケープが必要
         const innerHTML = body.users
           .map(
             (user) =>
