@@ -20,29 +20,28 @@
         const response = await fetch('./data.json')
         const body = await response.json()
 
-        const innerHTML = body.users
-          .map(
-            (user) =>
-              `<tr>
-                <td>${escapeHtml(user.id)}</td>
-                <td>${escapeHtml(user.name)}</td>
-              </tr>`
-          )
-          .reduce((l, r) => l + r)
-
         const usersTbody = document.getElementById('users-tbody')
-        usersTbody.innerHTML = innerHTML
-      }
+        usersTbody.textContent = null
 
-      function escapeHtml(str) {
-        if (typeof str !== 'string') {
-          str = String(str)
-        }
-        return str
-          .replace(/&/g, '&amp;')
-          .replace(/</g, '&lt;')
-          .replace(/\'/g, '&apos;')
-          .replace(/\"/g, '&quot;')
+        // 各 user に対して、
+        // <tr>
+        //   <td>1</td>
+        //   <td>Alice</td>
+        // </tr>
+        // のような DOM を追加する処理
+        const innerHTML = body.users.forEach((user) => {
+          const tr = document.createElement('tr')
+
+          const tdId = document.createElement('td')
+          tdId.textContent = user.id
+          tr.appendChild(tdId)
+
+          const tdName = document.createElement('td')
+          tdName.textContent = user.name
+          tr.appendChild(tdName)
+
+          usersTbody.appendChild(tr)
+        })
       }
     </script>
   </body>
