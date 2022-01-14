@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8" />
     <title>demo</title>
   </head>
   <body>
@@ -8,8 +9,8 @@
     <input id="text-input" type="text" name="text" />
     <button id="submit-button" type="submit" disabled>submit</button>
     <script>
-      const textInput = document.getElementById('text-input')
-      const submitButton = document.getElementById('submit-button')
+      const textInput = document.querySelector('#text-input')
+      const submitButton = document.querySelector('#submit-button')
 
       textInput.oninput = (event) => {
         const inputValue = event.target.value

@@ -3,8 +3,8 @@
 ## javascript-on-console
 
 ```javascript
-const textInput = document.getElementById('text-input')
-const submitButton = document.getElementById('submit-button')
+const textInput = document.querySelector('#text-input')
+const submitButton = document.querySelector('#submit-button')
 
 textInput.oninput = (event) => {
   const inputValue = event.target.value
